@@ -3,21 +3,43 @@ const PARTY_DATE = new Date("2026-12-27T17:00:00+04:00"); // თბილის�
 const EMAIL_TO = "m.rukhadze@vr.ge";
 const EMAIL_CC = "gelashvilimarya@gmail.com";
 
-// ===== თოვლი =====
+// ===== თოვლი: ხელით დახატული ფიფქები + მრგვალი წერტილები =====
+const FLAKE_SVG = (() => {
+  let d = "";
+  for (let i = 0; i < 6; i++) {
+    const a = (i * Math.PI) / 3;
+    const c = Math.cos(a), s = Math.sin(a);
+    const P = (r, off = 0) => {
+      const aa = a + off;
+      return [(12 + r * Math.cos(aa)).toFixed(2), (12 + r * Math.sin(aa)).toFixed(2)];
+    };
+    const [ex, ey] = P(10.5);
+    d += `M12 12L${ex} ${ey}`;
+    // პატარა "V" ტოტები
+    const bx = 12 + 6.5 * c, by = 12 + 6.5 * s;
+    for (const sg of [1, -1]) {
+      const ba = a + sg * 0.75;
+      d += `M${bx.toFixed(2)} ${by.toFixed(2)}L${(bx + 3.4 * Math.cos(ba)).toFixed(2)} ${(by + 3.4 * Math.sin(ba)).toFixed(2)}`;
+    }
+  }
+  return `<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="${d}" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/></svg>`;
+})();
+
 (function snow() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const box = document.querySelector(".snow");
-  const chars = ["❄", "❅", "✦", "•"];
-  for (let i = 0; i < 140; i++) {
+  for (let i = 0; i < 100; i++) {
     const f = document.createElement("span");
-    f.className = "flake";
-    f.textContent = chars[i % chars.length];
+    const isFlake = i % 5 < 2; // ~40% ფიფქი, ~60% წერტილი
+    f.className = isFlake ? "flake star-flake" : "flake dot";
+    const size = isFlake ? 14 + Math.random() * 16 : 4 + Math.random() * 7;
+    f.style.width = f.style.height = size + "px";
+    if (isFlake) f.innerHTML = FLAKE_SVG;
     f.style.left = Math.random() * 100 + "vw";
-    f.style.fontSize = 7 + Math.random() * 15 + "px";
-    f.style.opacity = 0.4 + Math.random() * 0.6;
+    f.style.opacity = 0.75 + Math.random() * 0.25;
     f.style.setProperty("--drift", (Math.random() * 120 - 60) + "px");
-    f.style.animationDuration = 6 + Math.random() * 8 + "s";
-    f.style.animationDelay = -Math.random() * 14 + "s";
+    f.style.animationDuration = 7 + Math.random() * 8 + "s";
+    f.style.animationDelay = -Math.random() * 15 + "s";
     box.appendChild(f);
   }
 })();
