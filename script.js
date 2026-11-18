@@ -185,7 +185,7 @@ let dir = 0;
 function whoosh(force) {
   if (reduceMotion) return;
   const now = Date.now();
-  if (!force && now - lastWhoosh < 1500) return;
+  if (!force && now - lastWhoosh < 2500) return;
   lastWhoosh = now;
   const z = document.createElement("div");
   z.className = "zoomer" + (dir++ % 2 ? " rtl" : "");

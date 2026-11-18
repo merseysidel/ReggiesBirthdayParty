@@ -196,7 +196,7 @@ footer{text-align:center;color:#fff;font-size:1.1rem;font-weight:600;text-shadow
 /* ===== F1 ჩაშხუილება ===== */
 .zoomer{
   position:fixed;left:0;width:240px;z-index:20;pointer-events:none;
-  animation:zoom-ltr .95s cubic-bezier(.55,0,.35,1) forwards;
+  animation:zoom-ltr 2.2s cubic-bezier(.4,.1,.6,.9) forwards;
 }
 .zoomer.rtl{animation-name:zoom-rtl}
 .zoomer .inner{position:relative;transform:skewX(-10deg)}
