@@ -340,3 +340,6 @@ footer{background:none}
   45%{transform:scale(1) rotate(25deg);opacity:1}
   55%{transform:scale(1.15) rotate(30deg);opacity:1}
 }
+
+/* სათაური: ორი სტრიქონი, არასდროს გაწყდეს სიტყვის შუაში */
+.hero .kid-title{white-space:nowrap;font-size:min(8vw,3.4rem);display:inline-block}

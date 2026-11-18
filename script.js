@@ -392,3 +392,20 @@ document.querySelector(".tree-car").innerHTML = `<svg viewBox="0 0 170 120" xmln
   h.querySelectorAll(".l").forEach((s) => s.setAttribute("aria-hidden", "true"));
   buildGarland();
 })();
+
+// ===== სათაური ჩაეტიოს სიგანეში =====
+function fitTitle() {
+  const h = document.querySelector(".kid-title");
+  if (!h) return;
+  h.style.fontSize = "";
+  const max = h.parentElement.clientWidth - 8;
+  let size = parseFloat(getComputedStyle(h).fontSize);
+  let guard = 40;
+  while (h.offsetWidth > max && size > 16 && guard--) {
+    size -= 1;
+    h.style.fontSize = size + "px";
+  }
+}
+fitTitle();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitTitle(); buildGarland(); });
+window.addEventListener("resize", fitTitle);
