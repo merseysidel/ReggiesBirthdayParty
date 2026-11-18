@@ -101,7 +101,12 @@ form.addEventListener("submit", async (e) => {
       }),
     });
     const data = await res.json().catch(() => ({}));
-    if (!res.ok || data.success === "false") throw new Error(data.message || res.status);
+    if (/activat/i.test(data.message || "")) {
+      msg.className = "form-msg err";
+      msg.textContent = "ფორმა ჯერ გასააქტიურებელია — გააქტიურების მეილი გაიგზავნა 📩";
+      return;
+    }
+    if (!res.ok || String(data.success) === "false") throw new Error(data.message || res.status);
 
     msg.className = "form-msg ok";
     msg.textContent = coming
@@ -112,6 +117,10 @@ form.addEventListener("submit", async (e) => {
     console.error(err);
     msg.className = "form-msg err";
     msg.textContent = "ვერ გაიგზავნა 😕 სცადე თავიდან.";
+    const small = document.createElement("small");
+    small.style.cssText = "display:block;font-weight:400;opacity:.7;margin-top:4px";
+    small.textContent = String(err.message || err);
+    msg.appendChild(small);
   } finally {
     buttons.forEach((b) => (b.disabled = false));
   }
