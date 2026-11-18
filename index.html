@@ -7,16 +7,18 @@
 <meta name="description" content="მოწვევა რეჯის დაბადების დღეზე — 27 დეკემბერი, 17:00, ასკინკილა">
 <meta property="og:title" content="Reggie's 4th Birthday Party 🎄">
 <meta property="og:description" content="27 დეკემბერი, 17:00 · ასკინკილა">
-<meta name="theme-color" content="#8e0b1f">
+<meta name="theme-color" content="#dfe8cf">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Noto+Sans+Georgian:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@800&family=Noto+Sans+Georgian:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
-  <!-- ფერადი ნათურები -->
-  <ul class="lights" aria-hidden="true"></ul>
+  <!-- ქაღალდის გირლიანდები და ლენტები -->
+  <div class="garland" aria-hidden="true"></div>
+  <!-- ოქროსფერი ვარსკვლავები -->
+  <div class="sparkles" aria-hidden="true"></div>
   <!-- თოვლი -->
   <div class="snow" aria-hidden="true"></div>
 
@@ -26,8 +28,7 @@
       <div class="balloons" aria-hidden="true">
         <span class="balloon b1"></span><span class="balloon b2"></span><span class="balloon b3"></span>
       </div>
-      <p class="eyebrow">✨ გეპატიჟებით! ✨</p>
-      <h1>Reggie's <span class="four">4</span><sup>th</sup><br>Birthday Party</h1>
+      <h1 class="kid-title" aria-label="Reggie's 4th Birthday Party">Reggie's <span class="four">4</span><sup>th</sup><br>Birthday Party</h1>
     </header>
 
     <!-- 2. რეჯის ფოტო (დროებითი) -->
@@ -37,8 +38,7 @@
       <span class="deco deco-tractor" data-v="tractor"></span>
       <span class="deco deco-f1b" data-v="f1" style="--body:#0f6b3a;--accent:#f5c542"></span>
       <figure class="polaroid">
-        <img src="reggie.jpg?v=7" alt="რეჯი">
-        <span class="bow" aria-hidden="true">🎀</span>
+        <img src="reggie.jpg?v=11" alt="რეჯი">
       </figure>
     </section>
 
@@ -67,6 +67,9 @@
         <div><b id="cd-secs">0</b><span>წამი</span></div>
       </div>
     </section>
+
+    <!-- მანქანა ნაძვის ხით -->
+    <div class="lane" aria-hidden="true"><span class="tree-car"></span></div>
 
     <!-- 5. დრეს კოდი -->
     <section class="card" id="dresscode">
@@ -98,6 +101,6 @@
     <footer>გელოდებით! 🎁🎄🎂</footer>
   </main>
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=11"></script>
 </body>
 </html>
