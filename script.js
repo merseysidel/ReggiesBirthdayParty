@@ -3,6 +3,38 @@ const PARTY_DATE = new Date("2026-12-27T17:00:00+04:00"); // თბილის�
 const EMAIL_TO = "merseysidel@yahoo.com";
 const EMAIL_CC = "gelashvilimarya@gmail.com";
 
+// ===== ფერადი ნათურები =====
+(function lights() {
+  const ul = document.querySelector(".lights");
+  const colors = ["#ff3b3b", "#ffd23f", "#3ddc84", "#4fc3f7", "#ff7ad9"];
+  const count = Math.max(10, Math.round(window.innerWidth / 38));
+  for (let i = 0; i < count; i++) {
+    const li = document.createElement("li");
+    li.style.setProperty("--c", colors[i % colors.length]);
+    li.style.setProperty("--d", `${(i % 5) * 0.3}s`);
+    ul.appendChild(li);
+  }
+})();
+
+// ===== თოვლი =====
+(function snow() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const box = document.querySelector(".snow");
+  const chars = ["❄", "❅", "✦", "•"];
+  for (let i = 0; i < 45; i++) {
+    const f = document.createElement("span");
+    f.className = "flake";
+    f.textContent = chars[i % chars.length];
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.fontSize = 8 + Math.random() * 16 + "px";
+    f.style.opacity = 0.4 + Math.random() * 0.6;
+    f.style.setProperty("--drift", (Math.random() * 120 - 60) + "px");
+    f.style.animationDuration = 7 + Math.random() * 10 + "s";
+    f.style.animationDelay = -Math.random() * 15 + "s";
+    box.appendChild(f);
+  }
+})();
+
 // ===== Countdown =====
 const cd = {
   days: document.getElementById("cd-days"),

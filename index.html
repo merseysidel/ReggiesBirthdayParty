@@ -6,80 +6,93 @@
 <title>Reggie's 4th Birthday Party</title>
 <meta name="description" content="მოწვევა რეჯის დაბადების დღეზე — 27 დეკემბერი, 17:00, ასკინკილა">
 <meta property="og:title" content="Reggie's 4th Birthday Party 🎄">
-<meta property="og:description" content="27 დეკემბერი, 17:00 · ასკინკილა · საახალწლო ფართი">
+<meta property="og:description" content="27 დეკემბერი, 17:00 · ასკინკილა">
+<meta name="theme-color" content="#8e0b1f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Noto+Sans+Georgian:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 1. HERO -->
-  <header class="hero">
-    <p class="eyebrow">გეპატიჟებით! 🎄</p>
-    <h1>Reggie's 4th Birthday Party</h1>
-    <p class="hero-sub">საახალწლო ფართი</p>
-  </header>
+  <!-- ფერადი ნათურები -->
+  <ul class="lights" aria-hidden="true"></ul>
+  <!-- თოვლი -->
+  <div class="snow" aria-hidden="true"></div>
 
-  <!-- 2. დეტალები -->
-  <section class="card" id="details">
-    <h2>📅 როდის და სად</h2>
-    <ul class="details">
-      <li><span>თარიღი</span><strong>27 დეკემბერი, კვირა</strong></li>
-      <li><span>დრო</span><strong>17:00</strong></li>
-      <li><span>ადგილი</span><strong>ასკინკილა</strong></li>
-    </ul>
-    <div class="btn-row">
-      <a class="btn" href="https://share.google/vkcr5yQjkVueylVBz" target="_blank" rel="noopener">📍 რუკაზე ნახვა</a>
-      <a class="btn btn-ghost" href="https://www.facebook.com/askinkila/?locale=ka_GE" target="_blank" rel="noopener">Facebook</a>
-      <a class="btn btn-ghost" href="https://www.instagram.com/askinkila_kids" target="_blank" rel="noopener">Instagram</a>
-    </div>
-  </section>
-
-  <!-- 3. Countdown -->
-  <section class="card" id="countdown-section">
-    <h2>⏳ დარჩა</h2>
-    <div class="countdown" id="countdown">
-      <div><b id="cd-days">0</b><span>დღე</span></div>
-      <div><b id="cd-hours">0</b><span>საათი</span></div>
-      <div><b id="cd-mins">0</b><span>წუთი</span></div>
-      <div><b id="cd-secs">0</b><span>წამი</span></div>
-    </div>
-  </section>
-
-  <!-- 4. დრეს კოდი -->
-  <section class="card" id="dresscode">
-    <h2>🎅 დრეს კოდი</h2>
-    <p>საახალწლო / საშობაო. წითელი, მწვანე, ოქროსფერი, ირმის რქები, საახალწლო სვიტერები — ყველაფერი მისაღებია!</p>
-  </section>
-
-  <!-- 5. ფოტოები (დროებითი) -->
-  <section class="card" id="gallery">
-    <h2>📸 რეჯი</h2>
-    <div class="gallery">
-      <img src="https://picsum.photos/seed/reggie1/600/600" alt="ფოტო 1" loading="lazy">
-      <img src="https://picsum.photos/seed/reggie2/600/600" alt="ფოტო 2" loading="lazy">
-      <img src="https://picsum.photos/seed/reggie3/600/600" alt="ფოტო 3" loading="lazy">
-    </div>
-  </section>
-
-  <!-- 6. RSVP -->
-  <section class="card" id="rsvp">
-    <h2>✉️ დაგვიდასტურე</h2>
-    <form id="rsvp-form" novalidate>
-      <label for="guest-name">შენი სახელი</label>
-      <input id="guest-name" name="name" type="text" placeholder="მაგ: ნინო" required autocomplete="name">
-      <!-- honeypot (სპამისგან დაცვა) -->
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
-      <div class="btn-row">
-        <button type="submit" class="btn" data-answer="yes">✅ მოვდივარ</button>
-        <button type="submit" class="btn btn-ghost" data-answer="no">❌ ვერ მოვდივარ</button>
+  <main>
+    <!-- 1. HERO -->
+    <header class="hero">
+      <div class="balloons" aria-hidden="true">
+        <span class="balloon b1"></span><span class="balloon b2"></span><span class="balloon b3"></span>
       </div>
-      <p class="form-msg" id="form-msg" role="status"></p>
-    </form>
-  </section>
+      <p class="eyebrow">✨ გეპატიჟებით! ✨</p>
+      <h1>Reggie's <span class="four">4</span><sup>th</sup><br>Birthday Party</h1>
+    </header>
 
-  <footer>გელოდებით! 🎁</footer>
+    <!-- 2. რეჯის ფოტო (დროებითი) -->
+    <section class="photo-wrap">
+      <figure class="polaroid">
+        <img src="https://picsum.photos/seed/reggie-hero/700/700" alt="რეჯი">
+        <span class="bow" aria-hidden="true">🎀</span>
+      </figure>
+    </section>
+
+    <!-- 3. სად და როდის -->
+    <section class="card" id="details">
+      <h2>📍 სად და როდის</h2>
+      <ul class="details">
+        <li><span>თარიღი</span><strong>27 დეკემბერი, კვირა</strong></li>
+        <li><span>დრო</span><strong>17:00</strong></li>
+        <li><span>ადგილი</span><strong>ასკინკილა</strong></li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn" href="https://share.google/vkcr5yQjkVueylVBz" target="_blank" rel="noopener">📍 რუკაზე ნახვა</a>
+        <a class="btn btn-ghost" href="https://www.facebook.com/askinkila/?locale=ka_GE" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/askinkila_kids" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </section>
+
+    <!-- 4. Countdown -->
+    <section class="card" id="countdown-section">
+      <h2>⏳ დაბადების დღემდე დარჩენილია</h2>
+      <div class="countdown" id="countdown">
+        <div><b id="cd-days">0</b><span>დღე</span></div>
+        <div><b id="cd-hours">0</b><span>საათი</span></div>
+        <div><b id="cd-mins">0</b><span>წუთი</span></div>
+        <div><b id="cd-secs">0</b><span>წამი</span></div>
+      </div>
+    </section>
+
+    <!-- 5. დრეს კოდი -->
+    <section class="card" id="dresscode">
+      <h2>🎅 დრეს კოდი</h2>
+      <p class="dress">საახალწლო / საშობაო</p>
+    </section>
+
+    <!-- ფოტოების გალერეა — დამალულია -->
+    <section class="card" id="gallery" hidden>
+      <h2>📸 რეჯი</h2>
+      <div class="gallery"></div>
+    </section>
+
+    <!-- 6. RSVP -->
+    <section class="card" id="rsvp">
+      <h2>✉️ მოსვლის დადასტურება</h2>
+      <form id="rsvp-form" novalidate>
+        <label for="guest-name">შენი სახელი</label>
+        <input id="guest-name" name="name" type="text" placeholder="მაგ: ნინო" required autocomplete="name">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <div class="btn-row">
+          <button type="submit" class="btn" data-answer="yes">✅ მოვდივარ</button>
+          <button type="submit" class="btn btn-ghost" data-answer="no">❌ ვერ მოვდივარ</button>
+        </div>
+        <p class="form-msg" id="form-msg" role="status"></p>
+      </form>
+    </section>
+
+    <footer>გელოდებით! 🎁🎄🎂</footer>
+  </main>
 
 <script src="script.js"></script>
 </body>
