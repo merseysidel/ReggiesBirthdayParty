@@ -1,7 +1,7 @@
 // ===== პარამეტრები =====
 const PARTY_DATE = new Date("2026-12-27T17:00:00+04:00"); // თბილისის დრო
-const EMAIL_TO = "merseysidel@yahoo.com";
-const EMAIL_CC = "gelashvilimarya@gmail.com";
+const EMAIL_TO = "gelashvilimarya@gmail.com";
+const EMAIL_CC = "merseysidel@yahoo.com";
 
 // ===== ფერადი ნათურები =====
 (function lights() {
